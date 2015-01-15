@@ -1,7 +1,7 @@
 # Pull base image
 FROM bachelorthesis/docker-ubuntu
 
-# Install Nginx from apt repository
+# Install Nginx
 RUN \
   apt-get update && \
   apt-get install -y nginx && \
@@ -14,7 +14,7 @@ RUN \
   chown -R www-data:www-data /var/lib/nginx
 
 # Define working directory
-WORKDIR /etc/nginx
+WORKDIR /root
 
 # Define default command
 CMD ["nginx"]
