@@ -8,10 +8,13 @@ RUN pacman -Sy --noconfirm nginx
 
 
 # Define working directory
-WORKDIR /root
+WORKDIR /etc/nginx
+
+#Run s6
+#ENTRYPOINT ["/usr/bin/s6-svscan", "/etc/s6"]
 
 # Define default command
-CMD ["bash"]
+CMD ["/usr/bin/nginx -g 'pid /run/nginx.pid; error_log stderr;'"]
 
 # Expose ports
 EXPOSE 80
