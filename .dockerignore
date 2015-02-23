@@ -1,0 +1,6 @@
+.vagrant/
+.git/
+.gitattributes
+.gitignore
+README.md
+Vagrantfile
