@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
       # Docker run configuration
       #d.cmd     = [""]
       d.volumes = ["/home/core/shared/docker-nginx:/opt/shared:rw"]
-      d.ports   = ["8081:80"]      
+      #d.ports   = ["8081:80"]      
       
       # Vagrant host configuration
       d.force_host_vm       = true

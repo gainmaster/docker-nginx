@@ -17,7 +17,7 @@ WORKDIR /etc/nginx
 ENTRYPOINT ["/usr/bin/s6-svscan", "/etc/s6"]
 
 # Define default command
-CMD []
+CMD [""]
 
 # Expose ports
 EXPOSE 80

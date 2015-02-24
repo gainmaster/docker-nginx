@@ -2,4 +2,7 @@
 #
 # Jenkins s6 run script
 #
-"/usr/bin/nginx -g 'pid /run/nginx.pid; error_log stderr;'"
+NGINX=$(which nginx)
+echo 'Starting nginx from ' $NGINX
+$NGINX
+# -g 'pid /run/nginx.pid; error_log stderr;'"
