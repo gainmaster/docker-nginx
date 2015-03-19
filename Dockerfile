@@ -5,7 +5,7 @@ FROM bachelorthesis/archlinux
 RUN pacman -Sy --noconfirm nginx
 
 # Create nginx root folder and set owner http
-RUN mkdir /srv/http && chown -R http:http /srv/http
+RUN chown -R http:http /srv/http
 
 # Copy config
 COPY /config/mime.types /etc/nginx/mime.types
