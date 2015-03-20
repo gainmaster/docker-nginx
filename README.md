@@ -1,5 +1,7 @@
 # Nginx Docker image
 
+[![Build Status](http://jenkins.hesjevik.im/job/docker-java/badge/icon)](http://jenkins.hesjevik.im/job/docker-nginx/) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg?style=plastic)](https://registry.hub.docker.com/u/bachelorthesis/nginx/)
+
 This repository contains a **Dockerfile** for a base Nginx Docker image. It provides **Vagrantfiles** for development, and **shell scripts** for easy startup of containers. This repository is a part of an automated build, published to the [Docker Hub][docker_hub_repository].
 
 **Base image:** [bachelorthesis/docker-arch][docker_hub_base_image]
