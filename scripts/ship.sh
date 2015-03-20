@@ -6,7 +6,7 @@ trap 'exit 1' ERR   # Exit script with error if command fails
 # Set working directory to project root
 cd $(dirname "${BASH_SOURCE[0]}") && cd ../
 
-declare IMAGE_NAME="bachelorthesis/dind"
+declare IMAGE_NAME="bachelorthesis/nginx"
 
 ship() {
 	docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
