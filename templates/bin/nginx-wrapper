@@ -1,17 +1,27 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Set default root path
+CONFIG_PATH='/etc/nginx/sites-enabled/default'
 ROOT_PATH='/srv/http/'
 
-# Check if options specified
-while getopts "path:" optionName; do
-    case "$optionName" in
-        path) if [ -f "$ROOT_PATH" ]; then ROOT_PATH="$OPTARG"; fi;;
-        [?]) exit 255;;
+OPTS=`getopt -o p: --long path: -n 'parse-options' -- "$@"`
+if [ $? != 0 ] ; then echo "Failed parsing options." >&2 ; exit 1 ; fi
+ 
+echo "$OPTS"
+eval set -- "$OPTS"
+
+while true ; do
+    case "$1" in
+        -p | --path ) if [ -f "$ROOT_PATH" ]; then ROOT_PATH="$2"; fi; shift ;;
+        -- ) shift; break ;;
+        *  ) break ;;
     esac
 done
 
-sed -i "6s/.*/\    \ root $ROOT_PATH;/" /etc/nginx/sites-enabled/default
+sed -i "6s/.*/\    \ root $ROOT_PATH;/" $CONFIG_PATH
 
 # Start NGINX
+echo "Starting NGINX with root path $ROOT_PATH"
 /usr/sbin/nginx > /tmp/nginx.log
