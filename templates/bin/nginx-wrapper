@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Set default root path
+ROOT_PATH='/srv/http/'
+
+# Check if options specified
+while getopts "path:" optionName; do
+    case "$optionName" in
+        path) if [ -f "$ROOT_PATH" ]; then ROOT_PATH="$OPTARG"; fi;;
+        [?]) exit 255;;
+    esac
+done
+
+sed -i "6s/.*/\    \ root $ROOT_PATH;/" /etc/nginx/sites-enabled/default
+
+# Start NGINX
+/usr/sbin/nginx > /tmp/nginx.log

@@ -8,13 +8,14 @@ RUN pacman-install nginx
 RUN chown -R http:http /srv/http
 
 # Copy config
-ADD templates/etc /etc
+COPY templates/bin /usr/bin
+COPY templates/etc /etc
 
 # Define working directory
 WORKDIR /etc/nginx
 
 # Define default command
-CMD ["/usr/sbin/nginx > /tmp/nginx.log"]
+ENTRYPOINT ["/usr/bin/nginx-wrapper"]
 
 # Expose ports
 EXPOSE 80
