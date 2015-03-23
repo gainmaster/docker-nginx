@@ -34,6 +34,7 @@ setup() {
 }
 
 @test "logs to STDOUT" {
-  run docker run bachelorthesis/nginx bash -c "curl localhost > /dev/null 2>&1 && stat /tmp/nginx.log"
+  run docker run bachelorthesis/nginx bash -c "curl localhost > /dev/null 2>&1"
+  run docker run bachelorthesis/nginx bash -c "stat /tmp/nginx.log"
   [ $status -eq 0 ]
 }
