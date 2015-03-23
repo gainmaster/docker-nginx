@@ -34,6 +34,6 @@ setup() {
 }
 
 @test "nginx is running" {
-  run docker run bachelorthesis/nginx bash -c "stat /run/nginx.pid"
-  [ $status -eq 0 ]
+    run docker run bachelorthesis/nginx bash -c "cat /run/nginx.pid"
+    [ $status -eq 0 ]
 }
