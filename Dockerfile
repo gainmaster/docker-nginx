@@ -2,7 +2,7 @@
 FROM bachelorthesis/archlinux
 
 # Install Nginx
-RUN pacman -Sy --noconfirm nginx
+RUN pacman-install nginx
 
 # Create nginx root folder and set owner http
 RUN chown -R http:http /srv/http
@@ -16,7 +16,6 @@ WORKDIR /etc/nginx
 
 # Define default command
 CMD ["/usr/sbin/nginx"]
-# -g 'pid /run/nginx.pid; error_log stderr;'"
 
 # Expose ports
 EXPOSE 80

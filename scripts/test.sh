@@ -9,7 +9,7 @@ cd $(dirname "${BASH_SOURCE[0]}") && cd ../
 declare IMAGE_NAME="bachelorthesis/nginx"
 
 test() {
-	echo "THIS IS NOT A TEST....!!!!"
+	bats "test/nginx.bats"
 }
 
 if [[ -z $(which docker) ]]; then
