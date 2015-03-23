@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 # Set default root path
 CONFIG_PATH='/etc/nginx/sites-enabled/default'
 ROOT_PATH='/srv/http/'
