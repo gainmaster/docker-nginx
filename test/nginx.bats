@@ -1,5 +1,5 @@
 setup() {
-  docker history bachelorthesis/ >/dev/null 2>&1
+  docker history bachelorthesis/nginx >/dev/null 2>&1
 }
 
 @test "pacman cache is empty" {
