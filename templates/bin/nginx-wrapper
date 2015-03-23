@@ -20,7 +20,7 @@ while true ; do
     esac
 done
 
-sed -i "6s/.*/\    \ root $ROOT_PATH;/" $CONFIG_PATH
+sed -i "6s|.*|root $ROOT_PATH;|" "$CONFIG_PATH"
 
 # Start NGINX
 echo "Starting NGINX with root path $ROOT_PATH"
