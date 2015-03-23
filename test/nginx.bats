@@ -8,9 +8,9 @@ setup() {
   [ "$output" = "0" ]
 }
 
-@test "package installs cleanly" {
-  run docker run bachelorthesis/nginx pacman-install nginx
-  [ $status -eq 0 ]
+@test "it should install NGINX 1.6.2" {
+  run docker run bachelorthesis/nginx bash -c "/usr/sbin/nginx -v"
+  [[ "$output" =~ "1.6.2"  ]]
 }
 
 @test "configuration file is ok" {
@@ -33,8 +33,7 @@ setup() {
   [ "$output" = "755" ]
 }
 
-@test "nginx is running" {
-  skip
-  run docker run bachelorthesis/nginx bash -c "cat /run/nginx.pid"
-  [ $status -eq 0 ]
+@test "it should log to STDOUT" {
+  curl localhost > /dev/null 2>&1
+  [[ -s /tmp/nginx.log ]]
 }
