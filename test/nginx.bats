@@ -9,7 +9,6 @@ setup() {
 }
 
 @test "package installs cleanly" {
-  skip
   run docker run bachelorthesis/nginx pacman-install nginx
   [ $status -eq 0 ]
 }
@@ -25,16 +24,17 @@ setup() {
 }
 
 @test  "server root folder correct owner" {
-    run docker run bachelorthesis/nginx bash -c "stat -c %U /srv/http/"
-    [ "$output" = "http" ]
+  run docker run bachelorthesis/nginx bash -c "stat -c %U /srv/http/"
+  [ "$output" = "http" ]
 }
 
 @test  "server root folder correct permissions" {
-    run docker run bachelorthesis/nginx bash -c "stat -c %a /srv/http/"
-    [ "$output" = "755" ]
+  run docker run bachelorthesis/nginx bash -c "stat -c %a /srv/http/"
+  [ "$output" = "755" ]
 }
 
 @test "nginx is running" {
-    run docker run bachelorthesis/nginx bash -c "cat /run/nginx.pid"
-    [ $status -eq 0 ]
+  skip
+  run docker run bachelorthesis/nginx bash -c "cat /run/nginx.pid"
+  [ $status -eq 0 ]
 }
