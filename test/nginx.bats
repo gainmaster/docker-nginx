@@ -34,6 +34,7 @@ setup() {
 }
 
 @test "it should log to STDOUT" {
+  skip
   curl localhost > /dev/null 2>&1
   [[ -s /tmp/nginx.log ]]
 }
