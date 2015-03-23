@@ -14,7 +14,7 @@ ADD templates/etc /etc
 WORKDIR /etc/nginx
 
 # Define default command
-CMD ["/usr/sbin/nginx"]
+CMD ["/usr/sbin/nginx > /tmp/nginx.log"]
 
 # Expose ports
 EXPOSE 80

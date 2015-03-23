@@ -8,7 +8,7 @@ setup() {
   [ "$output" = "0" ]
 }
 
-@test "it should install NGINX 1.6.2" {
+@test "installs NGINX 1.6.2" {
   run docker run bachelorthesis/nginx bash -c "/usr/sbin/nginx -v"
   [[ "$output" =~ "1.6.2"  ]]
 }
@@ -33,8 +33,7 @@ setup() {
   [ "$output" = "755" ]
 }
 
-@test "it should log to STDOUT" {
-  skip
-  curl localhost > /dev/null 2>&1
-  [[ -s /tmp/nginx.log ]]
+@test "logs to STDOUT" {
+  run docker run bachelorthesis/nginx bash -c "curl localhost > /dev/null 2>&1 && stat /tmp/nginx.log"
+  [ $status -eq 0 ]
 }
