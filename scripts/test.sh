@@ -10,6 +10,7 @@ declare IMAGE_NAME="bachelorthesis/nginx"
 
 test() {
 	#bats "test/nginx.bats"
+    echo "Walla walla"
 }
 
 if [[ -z $(which docker) ]]; then
