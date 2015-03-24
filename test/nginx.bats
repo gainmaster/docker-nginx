@@ -40,7 +40,7 @@ setup() {
 
 @test  "should return 403" {
   run docker run --entrypoint=/bin/bash bachelorthesis/nginx -c "curl -Is localhost | head -n 1 | awk '{print $2}'"
-  [ "$output" = "403" ]
+  [ "$output" -eq 403 ]
 }
 
 @test "logs to STDOUT" {
