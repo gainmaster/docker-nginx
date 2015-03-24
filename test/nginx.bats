@@ -8,6 +8,11 @@ setup() {
   [ "$output" = "0" ]
 }
 
+@test "nginx binary is found in $PATH" {
+  run docker run --entrypoint=/bin/bash bachelorthesis/nginx -c "which nginx"
+  [ "$status" -eq 0 ]
+}
+
 @test "installs NGINX 1.6.2" {
   run docker run --entrypoint=/bin/bash bachelorthesis/nginx -c "/usr/sbin/nginx -v"
   [[ "$output" =~ "1.6.2"  ]]
@@ -31,6 +36,11 @@ setup() {
 @test  "server root folder correct permissions" {
   run docker run --entrypoint=/bin/bash bachelorthesis/nginx -c "stat -c %a /srv/http/"
   [ "$output" = "755" ]
+}
+
+@test  "should return 403" {
+  run docker run --entrypoint=/bin/bash bachelorthesis/nginx -c "curl -Is localhost | head -n 1 | awk '{print $2}'"
+  [ "$output" = "403" ]
 }
 
 @test "logs to STDOUT" {
