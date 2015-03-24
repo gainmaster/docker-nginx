@@ -38,11 +38,6 @@ setup() {
   [ "$output" = "755" ]
 }
 
-@test  "should return 403" {
-  run docker run --entrypoint=/bin/bash bachelorthesis/nginx -c "curl -Is localhost | head -n 1 | awk '{print $2}'"
-  [ "$output" -eq 403 ]
-}
-
 @test "logs to STDOUT" {
   skip "This command will return zero soon, but not now"
   run docker run --entrypoint=/bin/bash bachelorthesis/nginx -c "curl localhost > /dev/null 2>&1"
