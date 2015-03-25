@@ -7,7 +7,7 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
 
 Vagrant.configure("2") do |config|
 
-  config.vm.define "docker-nginx" do |v|
+  config.vm.define "nginx" do |v|
     v.vm.provider "docker" do |d|
       # Docker image properties
       d.build_dir       = "."
@@ -24,4 +24,5 @@ Vagrant.configure("2") do |config|
       d.vagrant_machine     = "coreos-01"
     end
   end
+    
 end

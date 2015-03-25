@@ -1,5 +1,5 @@
-# Pull base image
 FROM bachelorthesis/archlinux
+MAINTAINER Knut Lorvik <knutlor@tihlde.org>
 
 # Install Nginx
 RUN pacman-install nginx
