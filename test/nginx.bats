@@ -13,9 +13,9 @@ setup() {
   [ "$status" -eq 0 ]
 }
 
-@test "installs NGINX 1.6.2" {
+@test "installs NGINX 1.6.3" {
   run docker run --entrypoint=/bin/bash bachelorthesis/nginx -c "/usr/sbin/nginx -v"
-  [[ "$output" =~ "1.6.2"  ]]
+  [[ "$output" =~ "1.6.3"  ]]
 }
 
 @test "configuration file is ok" {
