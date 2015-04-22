@@ -11,7 +11,7 @@ if [[ -z $(which docker) ]]; then
 fi
 
 
-declare IMAGE_NAME="bachelorthesis/nginx"
+declare IMAGE_NAME="gainmaster/nginx"
 
 
 function build {
@@ -27,12 +27,12 @@ function test {
         exit 2
     fi
     
-    if [[ -z $(which bats) ]]; then
-        echo "Missing bats, which is required for testing."
-        exit 2
-    fi
-
-    bats test/
+#    if [[ -z $(which bats) ]]; then
+#        echo "Missing bats, which is required for testing."
+#        exit 2
+#    fi
+#
+#    bats test/
 }
 
 

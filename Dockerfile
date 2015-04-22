@@ -1,4 +1,4 @@
-FROM bachelorthesis/archlinux
+FROM gainmaster/archlinux
 MAINTAINER Knut Lorvik <knutlor@tihlde.org>
 
 # Install Nginx
