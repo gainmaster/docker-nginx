@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -x
 trap 'exit 1' ERR   # Exit script with error if command fails
 
 if [[ -z $(which docker) ]]; then
@@ -9,7 +9,7 @@ fi
 
 declare PROJECT_DIRECTORY=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
 declare IMAGE_NAME="gainmaster/nginx"
-declare VERSION_DIRECTORY="${SCRIPT_DIRECTORY}/version"
+declare VERSION_DIRECTORY="${PROJECT_DIRECTORY}/version"
 
 cd $PROJECT_DIRECTORY
 
@@ -45,7 +45,7 @@ function test {
         exit 2
     fi
 
-    # $SCRIPT_DIRECTORY/utility/bats.sh test/archlinux-base.bats
+    # $PROJECT_DIRECTORY/utility/bats.sh test/archlinux-base.bats
 }
 
 
