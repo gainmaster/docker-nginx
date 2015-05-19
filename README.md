@@ -4,7 +4,7 @@
 
 This repository contains a **Dockerfiles** for Nginx Docker images. This repository is a part of an automated build, published to the [Docker Hub][docker_hub_repository].
 
-[docker_hub_repository]: https://registry.hub.docker.com/u/bachelorthesis/nginx/
+[docker_hub_repository]: https://registry.hub.docker.com/u/gainmaster/nginx/
 
 ## Docker Hub repository tags
 
