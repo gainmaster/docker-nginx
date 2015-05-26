@@ -13,6 +13,12 @@ This repository contains a **Dockerfiles** for Nginx Docker images. This reposit
 * `latest` : Alias to `http`
 * `http` : Nginx HTTP static content server
 
+## Installed packages
+
+* [Nginx][nginx] - HTTP web server & proxy.
+
+[nginx]: http://nginx.org/
+
 ## Resources
 
 These resources have been helpful when creating this Docker image:
