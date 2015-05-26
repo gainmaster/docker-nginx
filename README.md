@@ -2,7 +2,7 @@
 
 [![Build Status](http://ci.hesjevik.im/buildStatus/icon?job=docker-nginx)](http://ci.hesjevik.im/job/docker-nginx/) [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg?style=plastic)][docker_hub_repository]
 
-This repository contains a **Dockerfiles** for Nginx Docker images. This repository is a part of an automated build, published to the [Docker Hub][docker_hub_repository].
+This repository contains **Dockerfiles** for Nginx Docker images. This repository is a part of an automated build, published to the [Docker Hub][docker_hub_repository].
 
 [docker_hub_repository]: https://registry.hub.docker.com/u/gainmaster/nginx/
 
